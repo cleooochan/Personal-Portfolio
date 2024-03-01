@@ -1,0 +1,384 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Kanit", sans-serif;
+    font-size: 18px;
+    box-sizing: border-box; /*what's for?*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #004a54;
+    font-family: "Kanit", sans-serif;
+}
+
+section{
+    margin: 0 8rem;
+    padding-top: 10vh;
+}
+
+#header{
+    width:100%;
+    height: 100vh;
+    background-color: #e0efe1;
+    background-size: cover;
+    background-position: center;
+    color: #004a54;
+}
+
+
+.desktop-nav{
+    background-color: #e0efe1;
+    font-family: "Kanit", sans-serif;
+    color: #004a54;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+/* Transition */
+nav ul li a{
+    color:#004a54 ;
+    text-decoration: none; /*remove the underline*/
+    position: relative;
+}
+
+nav ul li a::after{
+    content: ''; /*add underline?!*/
+    width:0;
+    height: 2px;
+    background-color: #004a54;
+    position: absolute; /*parent should be relative*/
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%; 
+}
+
+/* Hamburger menu */
+#hamburger-nav{
+    display: none;
+}
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+}
+/* target the lines of the hamburger */
+.hamburger-icon span{
+    width:100%;
+    height: 2px;
+    background-color: #004a54; 
+    transition: all 0.3 ease-in-out;
+}
+
+/* what is this? mobile nav */
+.menu-links{
+    position: absolute;
+    top:100%;
+    right:0;
+    background-color: #e0efe1;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10ox;
+    text-align: center;
+    font-size: 1rem;
+    color: #004a54;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+/* the following is trying to manually creat 'X' */
+/* first span element */
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px,5px);
+}
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px,-5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+/* section cover */
+#cover{
+    margin-top: -45px;
+    display: flex;
+    flex-direction: column; /* Change the flex direction to column, otherwise it's row structure! */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.pic-container {
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 600px;
+}
+
+.btn-color-1{
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border-color: #004a54;
+    background-color: #004a54;
+    border-style: hidden;
+    transition: transform 0.3s;
+}
+
+.btn a{
+    text-decoration: none;
+    color: #e0efe1;
+}
+
+.btn:hover{
+    transform: translateY(-3px); /* Move the button 3 pixels up on hover */
+}
+
+.title{
+    font-size: 48px;
+    
+}
+
+.section-text-p2{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.section-text-p1{
+    font-family: "Roboto Flex", sans-serif;
+    
+}
+/* section about me */
+.main-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-2-text{
+    color: #e0efe1;
+}
+
+.sub-title{
+    margin-top: 20px;
+    margin-bottom: -15px;
+}
+
+.about-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+}
+
+.about-content-details-para, .skill-item{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 14px;
+    list-style: none;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(2, 120px);
+    gap: 20px;
+    height: 30vh;
+    margin: 30px 30px 30px 0;
+
+}
+
+.skill-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: #e0efe1;
+    border-style: dashed;
+    height: 100%;
+}
+
+.about-content-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 50px 0px 10px 80px;
+}
+
+.about-content-main{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: center;
+}
+
+.about-content-name{
+    margin-left: 80px;
+}
+
+.about-content-skills, .about-content-main{
+    margin-top: 50px;
+}
+/* social media logo */
+
+.contact-logo{
+    margin: 15px 0 0 77px;
+}
+
+.contact-logo ul li{
+    display: inline-block;
+    list-style: none;
+    gap: 10px;
+}
+
+.logo-item{
+    fill: #e0efe1;
+}
+
+/* projects section */
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap:2rem;
+    padding-top: 40px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.details-container{
+    border: #e0efe1 0.1rem solid;
+    padding: 1.5rem;
+    flex: 1;
+    border-radius: 2rem;
+    text-align: center;
+    
+}
+
+.article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    height: 250px;
+}
+
+.project-img{
+    border-radius: 2rem;
+    width: 80%;
+    height: 80%;
+}
+
+.btn-color-2{
+    background-color: #e0efe1;
+    border-radius: 2rem;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border-color:#e0efe1;
+    border-style: hidden;
+    transition: transform 0.3s;
+    margin-top: 20px;
+}
+
+.btn-color-2 a{
+    color: #e0efe1;
+    
+}
+
+.project-title{
+    color: #e0efe1;
+    font-size: 30px;
+}
+
+/* contact section */
+.contact-container{
+    background-color: #00333a;
+    border-radius: 2rem;
+    border: #00333a solid;
+    text-align: left;
+    color: #e0efe1;
+}
+
+form{
+    width:50vw;
+    margin:auto;
+    padding: 2rem;
+}
+
+fieldset{
+    border: none;
+    padding: 2rem 0;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    display: block;
+    margin: 1rem 0;
+}
+
+input, textarea{
+    width: 100%;
+    background-color: #e0efe1;
+    border-radius: 0.2rem;
+    border: 0.5px solid #e0efe1;
+    
+}
+
+placeholder{
+    color: azure;
+}
